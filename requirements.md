@@ -79,9 +79,16 @@
   - Booking.property_id and Booking.booking_id
   - Payment.booking_id
 
-## ER Diagram Instructions
-1. Create visual representation using Draw.io or similar tool
-2. Show all entities with their attributes
-3. Clearly indicate relationships with proper cardinality
-4. Include relationship verbs (e.g., "writes", "receives", "books")
-5. Export as PNG image and include in ERD/ directory
+
+### Relationships
+
+```mermaid
+erDiagram
+    USER ||--o{ PROPERTY : "hosts"
+    USER ||--o{ BOOKING : "makes"
+    USER ||--o{ REVIEW : "writes"
+    USER ||--o{ MESSAGE : "sends"
+    USER ||--o{ MESSAGE : "receives"
+    PROPERTY ||--o{ BOOKING : "has"
+    PROPERTY ||--o{ REVIEW : "receives"
+    BOOKING ||--o{ PAYMENT : "has"
