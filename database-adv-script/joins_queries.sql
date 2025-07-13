@@ -26,7 +26,10 @@ SELECT
 FROM 
     property p
 LEFT JOIN 
-    review r ON p.property_id = r.property_id;
+    review r ON p.property_id = r.property_id
+ORDER BY 
+    p.name ASC, 
+    r.created_at DESC;
 
 
 SELECT 
